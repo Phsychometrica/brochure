@@ -1,408 +1,1488 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Psychometrica ProPlus – Online Brochure</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychometrica ProPlus – Unlock Potential</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-  <!-- Font Awesome & Google Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --primary:#2B3A67;
-      --secondary:#5269a7;
-      --accent:#F9A826;
-      --teal:#26A69A;
-      --text-dark:#343a40;
-      --text-light:#f8f9fa;
-      --bg-light:#f8f9fa;
-      --bg-white:#ffffff;
-      --border:#e9ecef;
-      --whatsapp:#25D366;
-      --radius:14px;
-      --shadow:0 18px 50px rgba(43,58,103,.1);
-      --t:.3s;
-      /* preschool overrides */
-      --clr-primary-2: #4e54c8;
-      --clr-secondary-2: #8f94fb;
-      --clr-background-2: #f5f7fa;
-      --clr-surface-2: #ffffff;
-      --clr-text-2: #333333;
-      --radius-2: 12px;
-      --shadow-sm-2: rgba(0, 0, 0, 0.1) 0px 2px 8px;
-      --gap-2: 24px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:'Poppins','Noto Sans Devanagari',sans-serif;
-      line-height:1.8;
-      background:var(--bg-light);
-      color:var(--text-dark);
-    }
-    .brochure{
-      max-width:1140px;
-      margin:25px auto;
-      background:var(--bg-white);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .hero{
-      padding:50px 40px 45px;
-      text-align:center;
-      background:linear-gradient(140deg,var(--primary)0%,var(--secondary)100%);
-      color:var(--text-light);
-      border-radius:var(--radius) var(--radius) 0 0;
-    }
-    .hero i{font-size:4.5rem;color:var(--accent);margin-bottom:18px;text-shadow:3px 3px 10px rgba(0,0,0,.25)}
-    .hero h1{margin:8px 0;font-size:3.3rem;font-weight:700;text-shadow:2px 2px 6px rgba(0,0,0,.35)}
-    .hero h1 .pro{
-      background:var(--accent);
-      color:var(--primary);
-      padding:6px 14px;
-      font-size:.6em;
-      border-radius:8px;
-      font-weight:700;
-      display:inline-block;
-    }
-    .hero .tagline{font-size:1.65rem;font-weight:300;max-width:85%;margin:15px auto 0}
-    .hero .note{margin-top:20px;font-size:1rem;opacity:.85}
+    <style>
+        /* --- Global Settings & Variables --- */
+        :root {
+            --primary-dark: #1A2A57; /* Deep blue */
+            --primary-main: #2B3A67; /* Main blue */
+            --primary-light: #5269a7; /* Lighter blue */
+            --accent-main: #F9A826; /* Yellow/Orange */
+            --accent-dark: #e89a1d;
+            --teal-main: #26A69A; /* Teal */
+            --teal-light: #64d8cb;
+            --success-main: #4CAF50;
+            --warning-main: #FFC107;
+            --danger-main: #F44336;
 
-    .tabs-wrap{padding:10px 40px 0;border-bottom:1px solid var(--border);background:var(--bg-white)}
-    .tabs{
-      display:flex;
-      overflow-x:auto;
-      -webkit-overflow-scrolling:touch;
-    }
-    .tabs a{
-      flex-shrink:0;
-      display:flex;
-      align-items:center;
-      gap:9px;
-      padding:16px 26px;
-      margin-right:6px;
-      font-size:1.05rem;
-      font-weight:500;
-      white-space:nowrap;
-      color:#fff;
-      border-bottom:4px solid transparent;
-      border-radius:8px 8px 0 0;
-      transition:all var(--t);
-      text-decoration:none;
-    }
-    .tabs a:nth-child(1){background:linear-gradient(135deg,#ff9a00,#ff5959)}
-    .tabs a:nth-child(2){background:linear-gradient(135deg,#4facfe,#00f2fe)}
-    .tabs a:nth-child(3){background:linear-gradient(135deg,#43e97b,#38f9d7)}
-    .tabs a:nth-child(4){background:linear-gradient(135deg,#fa709a,#fee140)}
-    .tabs a:nth-child(5){background:linear-gradient(135deg,#7f00ff,#e100ff)}
-    .tabs a:nth-child(6){background:linear-gradient(135deg,#ff7e5f,#feb47b)}
-    .tabs a.active{border-bottom-color:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
-    .tabs a:not(.active):hover{filter:brightness(1.15);transform:translateY(-1px)}
-    @media(max-width:650px){.tabs a{flex:1 1 calc(33.3% - 10px);margin:4px}}
-    @media(max-width:480px){.tabs a{font-size:.9rem;padding:12px 10px}}
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
+            --text-muted: #6c757d;
 
-    .panes{border-radius:0 0 var(--radius) var(--radius)}
-    .pane{display:none;padding:55px 70px;min-height:450px;animation:fade .35s}
-    .pane.active{display:block}
-    @keyframes fade{from{opacity:0}to{opacity:1}}
+            --bg-light: #f5f7fa; /* Light grey background */
+            --bg-white: #ffffff;
+            --bg-alt: #eef2f7; /* Slightly different bg for variation */
 
-    .page-title{text-align:center;color:var(--primary);font-size:2.4rem;font-weight:600;border-bottom:5px solid var(--accent);margin:15px 0 30px;padding-bottom:20px}
-    .page-sub{font-size:1.5rem;color:var(--secondary);text-align:center;margin-bottom:50px}
-    h3{color:#1A2A57;font-size:1.9rem;font-weight:600;margin:50px 0 30px;padding-left:20px;border-left:8px solid var(--teal)}
-    ul{padding-left:15px;list-style:none}
-    li{font-size:1.1rem;position:relative;padding-left:40px;margin-bottom:22px}
-    li::before{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;position:absolute;left:0;top:7px;color:var(--teal);font-size:1.05rem}
-    .block{background:#fdfdff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 8px 25px rgba(0,0,0,.06);padding:30px}
+            --border-color: #dee2e6;
+            --border-radius-sm: 6px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
 
-    .btn-cta{background:var(--accent);color:var(--primary);padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 8px rgba(0,0,0,.1)}
-    .btn-cta:hover{background:#e89a1d;transform:translateY(-2px);box-shadow:0 6px 12px rgba(0,0,0,.15)}
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(43, 58, 103, 0.1);
+            --shadow-lg: 0 10px 30px rgba(43, 58, 103, 0.15);
 
-    /* preschool styles */
-    header.brochure-header{background:linear-gradient(135deg,var(--clr-primary-2),var(--clr-secondary-2));color:#fff;text-align:center;padding:4rem 1rem;clip-path:polygon(0 0,100% 0,100% 85%,0 100%)}
-    header.brochure-header h1{font-size:3rem;margin-bottom:.5rem;font-weight:700}
-    header.brochure-header p{font-size:1.25rem;font-weight:300}
-    .container{max-width:980px;margin:0 auto;padding:var(--gap-2)}
-    .brochure-section{margin-bottom:var(--gap-2);opacity:0;transform:translateY(20px);animation:fadeInUp .8s forwards}
-    .feature-box, .step-box{background:var(--clr-surface-2);border-radius:var(--radius-2);box-shadow:var(--shadow-sm-2);padding:1.5rem;transition:transform .3s}
-    .feature-box:hover,.step-box:hover{transform:translateY(-5px)}
-    .feature-box h3, .step-box h3{color:var(--clr-primary-2);margin-bottom:.75rem;font-size:1.25rem;font-weight:600}
-    .feature-box p, .step-box p{font-size:1rem;color:var(--clr-text-2)}
-    .benefits-list li::before{content:"\f005";color:var(--accent);top:8px}
-    .contact-brochure{background:var(--clr-surface-2);padding:var(--gap-2);border-radius:var(--radius-2);box-shadow:var(--shadow-sm-2);text-align:center}
-    .contact-brochure h2{margin-bottom:1rem;font-size:1.75rem;color:var(--clr-primary-2)}
-    .contact-brochure p{margin:.5rem 0;font-size:1rem}
-    .btn-brochure{display:inline-block;margin-top:1rem;padding:.75rem 1.75rem;background:var(--clr-primary-2);color:#fff;border-radius:var(--radius-2);text-decoration:none;font-weight:600;transition:background .3s}
-    .btn-brochure:hover{background:var(--clr-secondary-2)}
-    @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
-    @media(max-width:480px){.pane{padding:35px 25px}}
-  </style>
+            --font-primary: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+            --line-height-base: 1.7;
+            --transition-speed: 0.3s;
+            --container-width: 1140px;
+            --gap-sm: 10px;
+            --gap-md: 20px;
+            --gap-lg: 30px;
+        }
+
+        /* --- Reset & Base Styles --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px; /* Base font size */
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: var(--line-height-base);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            color: var(--primary-dark);
+            line-height: 1.3;
+            margin-bottom: var(--gap-sm);
+        }
+
+        h1 { font-size: 3rem; font-weight: 700; }
+        h2 { font-size: 2.2rem; }
+        h3 { font-size: 1.6rem; }
+        h4 { font-size: 1.25rem; }
+
+        p {
+            margin-bottom: var(--gap-md);
+        }
+
+        a {
+            color: var(--primary-main);
+            text-decoration: none;
+            transition: color var(--transition-speed) ease;
+        }
+
+        a:hover {
+            color: var(--accent-main);
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Layout --- */
+        .brochure-container {
+            max-width: var(--container-width);
+            margin: 30px auto;
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden; /* Important for border-radius */
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            padding: 80px 40px 100px; /* Increased padding, bottom padding adjusted for wave */
+            text-align: center;
+            background: linear-gradient(140deg, var(--primary-main) 0%, var(--primary-light) 100%);
+            color: var(--text-light);
+        }
+
+        .hero-content {
+            position: relative; /* To ensure content is above the wave */
+            z-index: 2;
+        }
+
+        .hero-icon {
+            font-size: 4.5rem;
+            color: var(--accent-main);
+            margin-bottom: var(--gap-md);
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            display: block; /* Center icon */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-title {
+            margin: 10px 0;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .pro-badge {
+            background-color: var(--accent-main);
+            color: var(--primary-dark);
+            padding: 8px 18px;
+            font-size: 0.6em; /* Relative to h1 */
+            border-radius: var(--border-radius-sm);
+            font-weight: 700;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 15px auto 25px;
+            opacity: 0.9;
+        }
+
+        .hero-note {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-top: 10px;
+            margin-bottom: 30px; /* Space before button */
+        }
+
+        .btn-hero {
+            margin-top: var(--gap-md);
+        }
+
+        /* Hero Wave Divider */
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px; /* Adjust height as needed */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,192L48,170.7C96,149,192,107,288,112C384,117,480,171,576,197.3C672,224,768,224,864,202.7C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        /* --- Tabs Navigation --- */
+        .tabs-nav-wrapper {
+            background-color: var(--bg-white);
+            padding: 0 40px;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky; /* Makes tabs stick */
+            top: 0; /* Stick to the top */
+            z-index: 100; /* Ensure tabs are above content */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow when scrolled */
+        }
+
+        .tabs-container {
+            display: flex;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            scrollbar-width: none; /* Hide scrollbar Firefox */
+            -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+        }
+        .tabs-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar Chrome/Safari/Opera */
+        }
+
+        .tab-link {
+            flex-shrink: 0; /* Prevent shrinking */
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 18px 25px; /* More padding */
+            margin-right: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            white-space: nowrap;
+            color: var(--text-muted);
+            border-bottom: 4px solid transparent;
+            transition: all var(--transition-speed) ease;
+            position: relative; /* For pseudo-element */
+            border-top-left-radius: var(--border-radius-sm);
+            border-top-right-radius: var(--border-radius-sm);
+        }
+
+        .tab-link i {
+            margin-right: 5px; /* Space between icon and text */
+            color: inherit; /* Inherit color changes */
+            transition: color var(--transition-speed) ease;
+        }
+
+        .tab-link:hover {
+            color: var(--primary-main);
+            background-color: var(--bg-alt);
+        }
+
+        .tab-link.active {
+            color: var(--primary-main);
+            font-weight: 600;
+            border-bottom-color: var(--accent-main);
+            background-color: var(--bg-white); /* Ensure it stays white */
+        }
+
+        .tab-link.active i {
+            color: var(--accent-main);
+        }
+
+        /* --- Content Panes --- */
+        .panes-container {
+            background-color: var(--bg-white);
+            border-bottom-left-radius: var(--border-radius-lg);
+            border-bottom-right-radius: var(--border-radius-lg);
+        }
+
+        .pane {
+            display: none; /* Hidden by default */
+            padding: 50px 60px; /* Adjust padding */
+            min-height: 400px;
+        }
+
+        .pane.active {
+            display: block; /* Show active pane */
+        }
+
+        .pane-title {
+            text-align: center;
+            color: var(--primary-dark);
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: var(--gap-sm);
+            position: relative;
+            padding-bottom: var(--gap-md);
+        }
+        /* Underline effect for title */
+        .pane-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background-color: var(--accent-main);
+            border-radius: 3px;
+            margin: var(--gap-md) auto 0;
+        }
+
+        .pane-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 50px; /* More space after subtitle */
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Content Blocks & Sections */
+        .content-block {
+            margin-bottom: var(--gap-lg);
+        }
+
+        .content-block h3 {
+            color: var(--primary-main);
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: var(--gap-md);
+            display: flex; /* Align icon and text */
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon-left {
+            color: var(--teal-main);
+            font-size: 1.1em; /* Slightly larger than h3 text */
+        }
+
+        .highlight-section {
+            background-color: var(--bg-white); /* Default */
+            padding: var(--gap-lg);
+            margin: var(--gap-lg) -60px; /* Extend to pane edges */
+            padding-left: 60px; /* Reset padding */
+            padding-right: 60px;
+        }
+
+        .highlight-section.alt-bg {
+            background-color: var(--bg-alt); /* Use alternate background */
+        }
+
+        .highlight-section h3 {
+            margin-bottom: var(--gap-lg);
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .pane-footer {
+            text-align: center;
+            margin-top: var(--gap-lg);
+            padding-top: var(--gap-md);
+            border-top: 1px solid var(--border-color);
+        }
+        .footer-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: var(--gap-sm);
+        }
+        .link-subtle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .link-subtle:hover {
+            color: var(--primary-main);
+        }
+
+        /* --- Components --- */
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .btn i { margin-left: 8px; } /* Space for icons in buttons */
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-main);
+            color: var(--text-light);
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+        }
+
+        .btn-secondary {
+            background-color: var(--teal-main);
+            color: var(--text-light);
+        }
+        .btn-secondary:hover {
+            background-color: var(--teal-light);
+             color: var(--primary-dark);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-main);
+            color: var(--primary-dark);
+        }
+        .btn-accent:hover {
+            background-color: var(--accent-dark);
+            color: var(--primary-dark);
+        }
+
+        .btn-hero {
+             background-color: var(--accent-main);
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            padding: 14px 35px;
+        }
+        .btn-hero:hover {
+             background-color: var(--accent-dark);
+             color: var(--primary-dark);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            width: 100%; /* Full width in form */
+        }
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+
+        /* Feature Cards */
+        .card-grid {
+            display: grid;
+            gap: var(--gap-lg);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+        }
+        .card-grid.two-cols {
+             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Wider columns for 2-col layout */
+        }
+
+        .feature-card {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius-md);
+            padding: var(--gap-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--teal-main);
+            margin-bottom: var(--gap-md);
+            display: inline-block;
+        }
+        /* Alternate icon color */
+        .feature-card:nth-child(odd) .card-icon {
+            color: var(--primary-light);
+        }
+
+        .feature-card h4 {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            margin-bottom: var(--gap-sm);
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0; /* Remove bottom margin */
+        }
+
+        /* Styled Lists */
+        .styled-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .styled-list li {
+            font-size: 1.05rem;
+            position: relative;
+            padding-left: 35px; /* Space for icon */
+            margin-bottom: var(--gap-md);
+            line-height: 1.6;
+        }
+
+        .styled-list li i.fa-check {
+            position: absolute;
+            left: 0;
+            top: 5px; /* Adjust vertical alignment */
+            color: var(--success-main);
+            font-size: 1.1rem;
+            background-color: #e8f5e9; /* Light green circle */
+            border-radius: 50%;
+            padding: 4px;
+            width: 22px; /* Fixed width/height */
+            height: 22px;
+            text-align: center;
+            line-height: 1; /* Adjust for icon centering */
+        }
+        /* Compact list variant */
+        .styled-list.compact li {
+            margin-bottom: var(--gap-sm);
+            font-size: 1rem;
+        }
+        .styled-list.compact li i.fa-check {
+            top: 4px;
+        }
+
+        /* Steps Component */
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--gap-lg);
+            justify-content: space-between; /* Distribute items */
+            margin-top: var(--gap-md);
+        }
+
+        .step-item {
+            background: var(--bg-white);
+            border-radius: var(--border-radius-md);
+            padding: var(--gap-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            flex: 1 1 200px; /* Flex grow, shrink, basis */
+            position: relative;
+            overflow: hidden;
+        }
+        .step-item:not(:last-child)::after { /* Connector lines (optional) */
+            /* content: ''; position: absolute; right: -25px; top: 35px; width: 20px; height: 2px; background-color: var(--border-color); */
+            /* This needs refinement for responsiveness */
+        }
+
+
+        .step-number {
+            background-color: var(--accent-main);
+            color: var(--primary-dark);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 auto var(--gap-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-item h4 {
+            font-size: 1.1rem;
+            color: var(--primary-main);
+            margin-bottom: var(--gap-sm);
+        }
+
+        .step-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Contact Form & Info */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            gap: var(--gap-lg);
+            align-items: start; /* Align items to the top */
+        }
+
+        .contact-form-section, .contact-info-section {
+            background: var(--bg-alt);
+            padding: var(--gap-lg);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-form-section h3, .contact-info-section h3 {
+            margin-bottom: var(--gap-md);
+            color: var(--primary-main);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: var(--gap-md);
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+        .form-group label i {
+            margin-right: 6px;
+            color: var(--primary-light);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-main);
+            box-shadow: 0 0 0 3px rgba(43, 58, 103, 0.15);
+        }
+
+        .form-group select {
+             appearance: none; /* Remove default arrow */
+             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+             background-repeat: no-repeat;
+             background-position: right 15px center;
+             background-size: 1em;
+             padding-right: 40px; /* Space for custom arrow */
+        }
+
+        .form-actions {
+            text-align: center;
+            margin-top: var(--gap-lg);
+        }
+
+        .contact-details p {
+            margin-bottom: var(--gap-md);
+            font-size: 1.05rem;
+            display: flex;
+            align-items: flex-start; /* Align icon top */
+            gap: 12px;
+        }
+        .contact-details i {
+            color: var(--primary-main);
+            margin-top: 4px; /* Align icon slightly */
+        }
+        .contact-details a {
+            color: var(--primary-main);
+        }
+        .contact-details a:hover {
+            color: var(--accent-main);
+        }
+        .map-embed {
+             margin-top: var(--gap-lg);
+             border-radius: var(--border-radius-md);
+             overflow: hidden;
+             border: 1px solid var(--border-color);
+        }
+
+        /* Pricing Card */
+        .pricing-card {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-main));
+            color: var(--text-light);
+            border-radius: var(--border-radius-lg);
+            padding: var(--gap-lg);
+            max-width: 650px;
+            margin: 40px auto;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            overflow: hidden; /* For potential background patterns */
+            position: relative;
+        }
+
+        .pricing-header {
+            margin-bottom: var(--gap-md);
+        }
+        .pricing-header i.fa-gem {
+            font-size: 3rem;
+            color: var(--accent-main);
+            margin-bottom: var(--gap-sm);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .pricing-header h3 {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .pricing-header span {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .pricing-body {
+            margin-bottom: var(--gap-lg);
+            padding: 0 var(--gap-md);
+        }
+        .pricing-body p {
+             font-size: 1.1rem;
+             margin-bottom: var(--gap-md);
+             opacity: 0.9;
+        }
+        .pricing-body .styled-list {
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .pricing-body .styled-list li {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 12px;
+            padding-left: 30px;
+        }
+        .pricing-body .styled-list li i.fa-check {
+            color: #a5d6a7; /* Light green for contrast */
+            background-color: rgba(255, 255, 255, 0.1);
+            top: 3px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            padding: 3px;
+        }
+
+        .pricing-tag {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius-md);
+            padding: var(--gap-md);
+            margin-bottom: var(--gap-lg);
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 1.1rem;
+            margin-right: 15px;
+            display: block; /* On separate line */
+            margin-bottom: 5px;
+        }
+
+        .offer-price {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--accent-main);
+            display: block; /* On separate line */
+            margin-bottom: 10px;
+        }
+        .offer-price small {
+             font-size: 0.5em; /* Relative to offer price */
+             font-weight: 400;
+             opacity: 0.8;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background-color: var(--success-main);
+            color: white;
+            padding: 5px 12px;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .pricing-footer .btn-accent {
+            width: 80%;
+            max-width: 350px; /* Limit button width */
+            padding: 14px 30px;
+            font-size: 1.1rem;
+        }
+
+        /* --- Global Footer --- */
+        .global-footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-top: 0; /* Remove top margin if panes container provides space */
+        }
+        .global-footer p {
+            margin-bottom: 8px;
+        }
+        .global-footer a {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            margin: 0 10px;
+        }
+        .global-footer a:hover {
+            color: var(--accent-main);
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        /* Style for scroll-triggered animation (if using Observer) */
+        /*
+        .pane:not(.active), .feature-card, .content-block {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .pane.visible, .feature-card.visible, .content-block.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .pane.active {  Make active pane immediately visible without scroll trigger
+            opacity: 1;
+            transform: translateY(0);
+        }
+        */
+
+
+        /* --- Responsiveness --- */
+        @media (max-width: 992px) {
+            .hero { padding: 60px 30px 80px; }
+            .hero-title { font-size: 3rem; }
+            .hero-tagline { font-size: 1.3rem; }
+
+            .pane { padding: 40px 40px; }
+            .highlight-section { margin-left: -40px; margin-right: -40px; padding-left: 40px; padding-right: 40px;}
+
+            .contact-grid { grid-template-columns: 1fr; } /* Stack contact sections */
+             .contact-info-section { margin-top: var(--gap-lg); }
+        }
+
+        @media (max-width: 768px) {
+             html { font-size: 15px; } /* Slightly smaller base font */
+
+            .hero-title { font-size: 2.5rem; }
+            .pro-badge { padding: 6px 14px; font-size: 0.55em;}
+            .hero-tagline { font-size: 1.2rem; }
+
+            .tabs-nav-wrapper { padding: 0 15px; }
+            .tab-link { padding: 15px 18px; font-size: 0.95rem; gap: 6px;}
+
+            .pane { padding: 30px 25px; }
+            .pane-title { font-size: 2rem; }
+            .pane-subtitle { font-size: 1.1rem; margin-bottom: 40px;}
+            .highlight-section { margin-left: -25px; margin-right: -25px; padding-left: 25px; padding-right: 25px;}
+
+            .card-grid { grid-template-columns: 1fr; } /* Stack cards */
+             .card-grid.two-cols { grid-template-columns: 1fr; } /* Also stack 2-col grids */
+
+            .steps-container { flex-direction: column; align-items: center; }
+            .step-item { flex-basis: auto; width: 90%; max-width: 400px; }
+            .step-item:not(:last-child)::after { display: none; } /* Hide connectors */
+
+            .pricing-card { padding: var(--gap-md); }
+            .offer-price { font-size: 2.2rem; }
+            .pricing-footer .btn-accent { width: 90%; }
+        }
+
+        @media (max-width: 480px) {
+             html { font-size: 14px; }
+            .brochure-container { margin: 15px; border-radius: var(--border-radius-md);}
+            .hero { padding: 40px 20px 70px; }
+            .hero-title { font-size: 2.2rem; }
+            .hero-tagline { font-size: 1.1rem; }
+            .btn-hero { font-size: 1rem; padding: 12px 25px; }
+
+            .tabs-container { padding-bottom: 5px; /* Prevent cutting off bottom border */}
+            .tab-link { padding: 12px 15px; font-size: 0.9rem;}
+
+            .pane { padding: 25px 15px; }
+             .pane-title { font-size: 1.8rem; }
+             .pane-subtitle { font-size: 1rem; margin-bottom: 30px;}
+             .content-block h3 { font-size: 1.5rem; }
+             .highlight-section { margin-left: -15px; margin-right: -15px; padding: var(--gap-md) 15px; }
+             .highlight-section h3 { font-size: 1.6rem; }
+
+             .contact-form-section, .contact-info-section { padding: var(--gap-md); }
+        }
+    </style>
+
 </head>
 <body>
-  <div class="brochure">
+    <div class="brochure-container">
 
-    <!-- HERO -->
-    <section class="hero">
-      <i class="fas fa-brain"></i>
-      <h1>Psychometrica <span class="pro">ProPlus</span></h1>
-      <p class="tagline">Unlocking Potential, Shaping Futures</p>
-      <p class="note">(Assessments & Reports available in English & Marathi)</p>
-    </section>
-
-    <!-- TABS -->
-    <div class="tabs-wrap">
-      <nav class="tabs">
-        <a href="#parents" class="active"><i class="fas fa-users"></i> For Parents</a>
-        <a href="#institutions"><i class="fas fa-school"></i> For Institutions</a>
-        <a href="#preschool"><i class="fas fa-child"></i> Preschool</a>
-        <a href="#design"><i class="fas fa-flask"></i> Our Approach</a>
-        <a href="#contact"><i class="fas fa-headset"></i> Contact & Demo</a>
-        <a href="#offer"><i class="fas fa-tags"></i> Offer</a>
-      </nav>
-    </div>
-
-    <!-- PANES -->
-    <div class="panes">
-
-      <!-- PARENTS -->
-      <section id="parents" class="pane active">
-        <h2 class="page-title">Navigating Your Child's Development Journey</h2>
-        <p class="page-sub">Understanding the Challenges Parents Face</p>
-        <div>
-          <h3>The Uncertainty of Potential</h3>
-          <p>Every parent wants the best for their child, but understanding their true potential can feel like navigating without a map. Are they inclined towards science or arts? Do they possess strong logical skills or creative flair? Identifying these innate strengths and weaknesses early on is crucial, yet often challenging.</p>
-          <h3>Bridging the Gap Between School and Home</h3>
-          <p>While schools provide education, personalized guidance that aligns with a child's unique profile is often limited. Parents strive to support learning at home, but without specific insights, efforts might not be as effective. How can you provide the right activities, books, and support that truly resonate with your child's aptitude and interests?</p>
-          <h3>Preparing for Future Choices</h3>
-          <p>As children approach higher grades (like 9th and 10th), choosing the right academic stream becomes a critical decision. Making this choice based on peer pressure or assumptions, rather than genuine interest and aptitude, can lead to future dissatisfaction and academic challenges. Parents need reliable tools to help guide these important decisions.</p>
-        </div>
-        <div class="divider"></div>
-        <h3>Psychometrica ProPlus: Your Partner in Guidance</h3>
-        <ul class="benefits-list block">
-          <li><strong>Discover Strengths:</strong> Our scientific assessments pinpoint your child's core aptitudes (Grades 5-8) and key interest areas (Grades 9-10).</li>
-          <li><strong>Actionable Insights:</strong> Receive more than just scores – get detailed analysis and a personalized development plan packed with specific activities, reading suggestions, and exercises tailored for your child.</li>
-          <li><strong>Informed Decisions:</strong> Equip yourself and your child with data-driven insights to confidently choose the right academic path for future success.</li>
-          <li><strong>Bilingual Support:</strong> Access assessments and reports in both English and Marathi for complete understanding.</li>
-          <li><strong>Easy Sharing:</strong> Conveniently share results via WhatsApp or email.</li>
-          <li><strong>Certificate of Achievement:</strong> Download a personalized certificate for your child.</li>
-        </ul>
-        <p class="note">(Assessments & Reports available in English & Marathi)</p>
-        <div class="footer">
-          <p><i class="fas fa-globe"></i> <a href="https://pro.psychometricaproplus.com/" target="_blank">pro.psychometricaproplus.com</a></p>
-          <p><i class="fas fa-phone"></i> <a href="tel:+919284157202">+91 92841 57202</a></p>
-          <button class="btn-cta" onclick="location.hash='#contact'">Request a Demo</button>
-        </div>
-      </section>
-
-      <!-- INSTITUTIONS -->
-      <section id="institutions" class="pane">
-        <h2 class="page-title">Empowering Educational Institutions</h2>
-        <p class="page-sub">Revolutionize Your Guidance &amp; Counseling with Psychometrica ProPlus</p>
-        <div>
-          <h3>The Challenge of Personalized Guidance at Scale</h3>
-          <p>Providing truly personalized counseling in schools and tuition centers is tough. Identifying each student's unique needs, interests, and potential requires significant time and often lacks objective data, making effective guidance difficult.</p>
-        </div>
-        <h3>Key Features</h3>
-        <ul class="benefits-list block">
-          <li><strong>Comprehensive Assessments:</strong> Evaluate aptitude (verbal, numerical, abstract reasoning for 5-8) and interests (RIASEC for 9-10) quickly and effectively.</li>
-          <li><strong>Actionable Reports:</strong> Get instant, detailed reports highlighting strengths, weaknesses, learning preferences, and suggested streams.</li>
-          <li><strong>Automated Development Plans:</strong> Generate personalized, bilingual development plans automatically, saving valuable counseling time.</li>
-          <li><strong>Empower Counselors:</strong> Equip your team with objective data and tools to address student needs effectively.</li>
-          <li><strong>Professional Certificates:</strong> Generate certificates to acknowledge student participation and enhance your center's credibility.</li>
-          <li><strong>Data Management & Export:</strong> Easily manage student info and export detailed results for records and analysis <em>(requires regular backup from local storage)</em>.</li>
-        </ul>
-        <h3>Benefits for Tuition Classes / Schools</h3>
-        <ul class="benefits-list block">
-          <li><strong>Map Student Potential:</strong> Gain deep cognitive and emotional insights for effective student placement and support.</li>
-          <li><strong>Enhance Counseling:</strong> Utilize data-driven strategies for impactful conversations with parents and students.</li>
-          <li><strong>Attract More Admissions:</strong> Showcase your commitment to personalized guidance and student success.</li>
-          <li><strong>Create Tailored Plans:</strong> Use automated development plans to guide improved academic performance.</li>
-          <li><strong>Boost Your Brand:</strong> Offer professional assessment tools and certificates, setting your institution apart.</li>
-          <li><strong>Track Progress:</strong> Use assessment data over time to monitor and ensure continuous improvement.</li>
-        </ul>
-        <div class="footer">
-          <p><i class="fas fa-globe"></i> <a href="https://pro.psychometricaproplus.com/" target="_blank">pro.psychometricaproplus.com</a></p>
-          <p><i class="fas fa-phone"></i> <a href="tel:+919284157202">+91 92841 57202</a></p>
-          <button class="btn-cta" onclick="location.hash='#contact'">Request a Demo</button>
-        </div>
-      </section>
-
-      <!-- PRESCHOOL -->
-      <section id="preschool" class="pane">
-        <header class="brochure-header">
-          <h1>Psychometrica ProPlus</h1>
-          <p>Comprehensive Preschool Personality Assessment</p>
+        <header class="hero">
+            <div class="hero-content">
+                <i class="fas fa-brain hero-icon"></i>
+                <h1 class="hero-title">Psychometrica <span class="pro-badge">ProPlus</span></h1>
+                <p class="hero-tagline">Unlocking Potential, Shaping Futures</p>
+                <p class="hero-note">(Assessments & Reports available in English & Marathi)</p>
+                <a href="#contact" class="btn btn-hero">Request a Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-wave"></div>
         </header>
-        <main class="container">
-          <section class="brochure-section">
-            <h2>Overview</h2>
-            <p>Psychometrica ProPlus offers a dynamic, bilingual (English & Marathi) personality survey for children aged 3-6. Leveraging our intuitive interface, parents can quickly gain insights into their child's temperament and receive tailored development plans.</p>
-          </section>
-          <section class="brochure-section">
-            <h2>Key Features</h2>
-            <div class="feature-box"><h3>Bilingual Survey</h3><p>Complete survey questions and results available in English and Marathi.</p></div>
-            <div class="feature-box"><h3>Custom Development Plans</h3><p>Expert-backed recommendations for each temperament category to support growth.</p></div>
-            <div class="feature-box"><h3>Secure & Persistent Data</h3><p>Locally stored results ensure privacy and quick access, with optional sharing via WhatsApp or Email.</p></div>
-            <div class="feature-box"><h3>Admin Dashboard</h3><p>Manage child profiles, track past assessments, and export data effortlessly.</p></div>
-          </section>
-          <section class="brochure-section">
-            <h2>Benefits for Parents</h2>
-            <ul class="benefits-list block">
-              <li><strong>Understand Temperament:</strong> Deep insights into your child’s natural disposition (Strengths & Support areas).</li>
-              <li><strong>Early Intervention:</strong> Identify potential challenges and get tailored activities to foster healthy development.</li>
-              <li><strong>Personalized Guidance:</strong> Expert-backed tips for daily routines, play-based learning, and emotional support.</li>
-              <li><strong>Shareable Reports:</strong> Conveniently share bilingual (EN & MR) development plans with caregivers or teachers.</li>
-              <li><strong>Track Growth:</strong> Monitor progress over time with repeat assessments and updated recommendations.</li>
-              <li><strong>Peace of Mind:</strong> Feel confident that you’re giving your preschooler the right support at the right time.</li>
-            </ul>
-          </section>
-          <section class="brochure-section">
-            <h2>How It Works</h2>
-            <div class="step-box"><h3>1. Login & Setup</h3><p>Sign in via Auth0 to access the secure assessment portal.</p></div>
-            <div class="step-box"><h3>2. Complete Survey</h3><p>Select age group, language, and answer 40 simple statements about your child.</p></div>
-            <div class="step-box"><h3>3. View Results</h3><p>Receive interactive charts and a unique code to revisit results anytime.</p></div>
-            <div class="step-box"><h3>4. Get Recommendations</h3><p>Access tailored suggestions and print or share the development plan directly.</p></div>
-          </section>
-          <section class="contact-brochure">
-            <h2>Contact Us</h2>
-            <p>📍 Pimpri-Chinchwad, Pune 411044</p>
-            <p>🌐 <a href="https://pro.psychometricaproplus.com" target="_blank">pro.psychometricaproplus.com</a></p>
-            <p>📞 +91 92841 57202</p>
-            <a href="#contact" class="btn-brochure">Request a Demo</a>
-          </section>
+
+        <nav class="tabs-nav-wrapper" id="tabs-nav">
+            <div class="tabs-container">
+                <a href="#parents" class="tab-link active"><i class="fas fa-users"></i> For Parents</a>
+                <a href="#institutions" class="tab-link"><i class="fas fa-school"></i> For Institutions</a>
+                <a href="#preschool" class="tab-link"><i class="fas fa-child"></i> Preschool</a>
+                <a href="#approach" class="tab-link"><i class="fas fa-flask"></i> Our Approach</a>
+                <a href="#contact" class="tab-link"><i class="fas fa-headset"></i> Contact & Demo</a>
+                <a href="#offer" class="tab-link"><i class="fas fa-tags"></i> Special Offer</a>
+            </div>
+        </nav>
+
+        <main class="panes-container">
+
+            <section id="parents" class="pane active animate-fade-in">
+                <h2 class="pane-title">Navigating Your Child's Development Journey</h2>
+                <p class="pane-subtitle">Understanding the Challenges Parents Face</p>
+
+                <article class="content-block">
+                    <h3><i class="fas fa-map-signs icon-left"></i>The Uncertainty of Potential</h3>
+                    <p>Every parent wants the best, but understanding a child's true potential can feel like navigating without a map. Are they inclined towards science or arts? Identifying innate strengths early is crucial yet often challenging.</p>
+                </article>
+
+                <article class="content-block">
+                    <h3><i class="fas fa-link icon-left"></i>Bridging the Gap Between School and Home</h3>
+                    <p>Schools provide education, but personalized guidance aligning with a child's unique profile is often limited. Parents strive to support learning, but without specific insights, efforts might not be fully effective.</p>
+                </article>
+
+                <article class="content-block">
+                    <h3><i class="fas fa-graduation-cap icon-left"></i>Preparing for Future Choices</h3>
+                    <p>Choosing the right academic stream (Grades 9-10) is critical. Making choices based on peer pressure, not genuine aptitude, can lead to dissatisfaction. Parents need reliable tools for guidance.</p>
+                </article>
+
+                <div class="highlight-section">
+                    <h3><i class="fas fa-lightbulb icon-left"></i>Psychometrica ProPlus: Your Partner</h3>
+                    <div class="card-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-binoculars card-icon"></i>
+                            <h4>Discover Strengths</h4>
+                            <p>Pinpoint core aptitudes (5-8) & key interest areas (9-10) scientifically.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-tasks card-icon"></i>
+                            <h4>Actionable Insights</h4>
+                            <p>Get detailed analysis & personalized development plans with activities.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-check-circle card-icon"></i>
+                            <h4>Informed Decisions</h4>
+                            <p>Data-driven insights for confident academic path selection.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-language card-icon"></i>
+                            <h4>Bilingual Support</h4>
+                            <p>Assessments & reports in English and Marathi for clarity.</p>
+                        </div>
+                         <div class="feature-card">
+                            <i class="fab fa-whatsapp card-icon"></i>
+                            <h4>Easy Sharing</h4>
+                            <p>Conveniently share results via WhatsApp or email.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-certificate card-icon"></i>
+                            <h4>Certificate</h4>
+                            <p>Download a personalized certificate for your child.</p>
+                        </div>
+                    </div>
+                </div>
+                <footer class="pane-footer">
+                    <a href="#contact" class="btn btn-primary">Learn More & Request Demo</a>
+                </footer>
+            </section>
+
+            <section id="institutions" class="pane animate-fade-in">
+                <h2 class="pane-title">Empowering Educational Institutions</h2>
+                <p class="pane-subtitle">Revolutionize Guidance & Counseling with Objective Data</p>
+
+                <article class="content-block">
+                     <h3><i class="fas fa-users-cog icon-left"></i>The Challenge of Personalized Guidance at Scale</h3>
+                     <p>Providing truly personalized counseling in schools and tuition centers is tough. Identifying each student's unique needs often lacks objective data, making effective guidance difficult.</p>
+                </article>
+
+                <div class="highlight-section">
+                    <h3><i class="fas fa-star icon-left"></i>Key Features for Institutions</h3>
+                     <div class="card-grid two-cols">
+                        <div class="feature-card">
+                            <i class="fas fa-chart-bar card-icon"></i>
+                            <h4>Comprehensive Assessments</h4>
+                            <p>Evaluate aptitude (5-8) & interests (RIASEC for 9-10) efficiently.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-file-alt card-icon"></i>
+                            <h4>Actionable Reports</h4>
+                            <p>Instant, detailed reports on strengths, learning styles & stream suggestions.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-robot card-icon"></i>
+                            <h4>Automated Development Plans</h4>
+                            <p>Generate personalized, bilingual plans, saving valuable counseling time.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user-tie card-icon"></i>
+                            <h4>Empower Counselors</h4>
+                            <p>Equip your team with objective data for effective student support.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-certificate card-icon"></i>
+                            <h4>Professional Certificates</h4>
+                            <p>Acknowledge participation & enhance your center's credibility.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-database card-icon"></i>
+                            <h4>Data Management</h4>
+                            <p>Easily manage info & export results (requires local backup).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-section alt-bg">
+                     <h3><i class="fas fa-building icon-left"></i>Benefits for Your Institution</h3>
+                    <ul class="styled-list">
+                        <li><i class="fas fa-check"></i><strong>Map Student Potential:</strong> Gain deep insights for placement & support.</li>
+                        <li><i class="fas fa-check"></i><strong>Enhance Counseling:</strong> Use data for impactful parent/student conversations.</li>
+                        <li><i class="fas fa-check"></i><strong>Attract Admissions:</strong> Showcase commitment to personalized guidance.</li>
+                        <li><i class="fas fa-check"></i><strong>Tailored Plans:</strong> Guide improved academic performance effectively.</li>
+                        <li><i class="fas fa-check"></i><strong>Boost Brand:</strong> Offer professional tools & certificates.</li>
+                        <li><i class="fas fa-check"></i><strong>Track Progress:</strong> Monitor improvement using assessment data over time.</li>
+                    </ul>
+                </div>
+                 <footer class="pane-footer">
+                    <a href="#offer" class="btn btn-secondary">View Special Offer</a>
+                    <a href="#contact" class="btn btn-primary">Request Institutional Demo</a>
+                </footer>
+            </section>
+
+            <section id="preschool" class="pane animate-fade-in">
+                 <h2 class="pane-title">Understanding Your Preschooler</h2>
+                 <p class="pane-subtitle">Early Insights for Nurturing Growth (Ages 3-6)</p>
+
+                <article class="content-block">
+                    <h3><i class="fas fa-seedling icon-left"></i>Dynamic Personality Survey</h3>
+                    <p>Psychometrica ProPlus offers a bilingual (English & Marathi) personality survey designed for children aged 3-6. Our intuitive interface allows parents to quickly gain insights into their child's temperament and receive tailored development plans.</p>
+                </article>
+
+                <div class="highlight-section">
+                    <h3><i class="fas fa-puzzle-piece icon-left"></i>Key Preschool Features</h3>
+                    <div class="card-grid two-cols">
+                        <div class="feature-card">
+                            <i class="fas fa-language card-icon"></i>
+                            <h4>Bilingual Survey</h4>
+                            <p>Complete questions & results available in English and Marathi.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-file-medical-alt card-icon"></i>
+                            <h4>Custom Development Plans</h4>
+                            <p>Expert-backed tips for each temperament to support growth.</p>
+                        </div>
+                         <div class="feature-card">
+                            <i class="fas fa-lock card-icon"></i>
+                            <h4>Secure & Persistent Data</h4>
+                            <p>Locally stored results ensure privacy. Optional sharing via WhatsApp/Email.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-tachometer-alt card-icon"></i>
+                            <h4>Admin Dashboard</h4>
+                            <p>Manage profiles, track past assessments, and export data easily.</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="highlight-section alt-bg">
+                    <h3><i class="fas fa-heart icon-left"></i>Benefits for Parents of Preschoolers</h3>
+                    <ul class="styled-list">
+                        <li><i class="fas fa-check"></i><strong>Understand Temperament:</strong> Deep insights into natural disposition (Strengths & Support areas).</li>
+                        <li><i class="fas fa-check"></i><strong>Early Intervention:</strong> Identify potential challenges & get tailored activities.</li>
+                        <li><i class="fas fa-check"></i><strong>Personalized Guidance:</strong> Expert tips for routines, play, and emotional support.</li>
+                        <li><i class="fas fa-check"></i><strong>Shareable Reports:</strong> Easily share bilingual plans with caregivers or teachers.</li>
+                        <li><i class="fas fa-check"></i><strong>Track Growth:</strong> Monitor progress over time with repeat assessments.</li>
+                         <li><i class="fas fa-check"></i><strong>Peace of Mind:</strong> Feel confident in providing the right support at the right time.</li>
+                    </ul>
+                </div>
+
+                 <div class="highlight-section">
+                    <h3><i class="fas fa-shoe-prints icon-left"></i>How It Works (Simple Steps)</h3>
+                    <div class="steps-container">
+                         <div class="step-item">
+                             <div class="step-number">1</div>
+                             <h4>Login & Setup</h4>
+                             <p>Sign in securely to access the portal.</p>
+                         </div>
+                         <div class="step-item">
+                             <div class="step-number">2</div>
+                             <h4>Complete Survey</h4>
+                             <p>Select age, language & answer simple statements.</p>
+                         </div>
+                         <div class="step-item">
+                            <div class="step-number">3</div>
+                             <h4>View Results</h4>
+                             <p>See interactive charts & get a code to revisit.</p>
+                         </div>
+                         <div class="step-item">
+                             <div class="step-number">4</div>
+                             <h4>Get Plan</h4>
+                             <p>Access tailored suggestions; print or share directly.</p>
+                         </div>
+                    </div>
+                </div>
+
+                 <footer class="pane-footer">
+                    <a href="#contact" class="btn btn-primary">Inquire About Preschool Assessment</a>
+                </footer>
+            </section>
+
+            <section id="approach" class="pane animate-fade-in">
+                <h2 class="pane-title">Expertly Designed for Holistic Development</h2>
+                <p class="pane-subtitle">The Science and Methodology Behind Psychometrica ProPlus</p>
+
+                <article class="content-block">
+                    <h3><i class="fas fa-microscope icon-left"></i>Grounded in Research</h3>
+                    <p>Built upon established principles of psychometrics and child development psychology. Our framework is curated by experts for reliable and meaningful insights into cognitive abilities, personality, and interests.</p>
+                </article>
+
+                <article class="content-block">
+                    <h3><i class="fas fa-user-graduate icon-left"></i>Developed by Experts</h3>
+                    <p>Designed and validated by experienced professionals in educational psychology, psychometric testing, and child counseling, ensuring relevance and cultural attunement for the Indian context.</p>
+                </article>
+
+                <div class="highlight-section alt-bg">
+                    <h3><i class="fas fa-layer-group icon-left"></i>Tailored for Developmental Stages</h3>
+                     <div class="card-grid two-cols">
+                         <div class="feature-card">
+                             <i class="fas fa-ruler-combined card-icon"></i>
+                             <h4>Grades 5-8 (Foundational)</h4>
+                             <p>Identify core aptitudes (verbal, numerical, abstract reasoning) & basic personality indicators. Build essential academic skills.</p>
+                         </div>
+                         <div class="feature-card">
+                             <i class="fas fa-compass card-icon"></i>
+                             <h4>Grades 9-10 (Exploratory)</h4>
+                             <p>Utilize the RIASEC model to map interest areas, guiding stream selection and career exploration effectively.</p>
+                         </div>
+                    </div>
+                </div>
+
+                <article class="content-block">
+                    <h3><i class="fas fa-bullseye icon-left"></i>Actionable Outcomes for Growth</h3>
+                    <p>Detailed reports and automatically generated, bilingual development plans translate complex data into clear insights and concrete steps for parents, teachers, and students to foster improvement and build confidence.</p>
+                </article>
+                <footer class="pane-footer">
+                     <p class="footer-note">(Assessments & Reports available in English & Marathi)</p>
+                     <a href="https://pro.psychometricaproplus.com/" target="_blank" class="link-subtle">Visit Pro Platform <i class="fas fa-external-link-alt fa-xs"></i></a>
+                </footer>
+            </section>
+
+            <section id="contact" class="pane animate-fade-in">
+                 <h2 class="pane-title">Contact Us & Request a Demo</h2>
+                 <p class="pane-subtitle">Let's connect and explore how Psychometrica ProPlus can benefit you.</p>
+
+                <div class="contact-grid">
+                    <div class="contact-form-section">
+                        <h3>Book Your Free Demo</h3>
+                        <p>Fill out the quick form below and tap the WhatsApp button to schedule your personalized demo!</p>
+                        <form id="demoForm">
+                            <div class="form-group">
+                                <label for="demoName"><i class="fas fa-user"></i> Your Name:</label>
+                                <input type="text" id="demoName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="demoPhone"><i class="fas fa-phone"></i> Phone Number:</label>
+                                <input type="tel" id="demoPhone" placeholder="Enter 10-digit number" pattern="[0-9]{10}" required>
+                            </div>
+                             <div class="form-group">
+                                <label for="demoRole"><i class="fas fa-briefcase"></i> I am a:</label>
+                                <select id="demoRole">
+                                    <option value="Parent">Parent</option>
+                                    <option value="Institution Representative">Institution Representative</option>
+                                     <option value="Counselor">Counselor</option>
+                                     <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="demoTime"><i class="fas fa-clock"></i> Preferred Day / Time (Optional):</label>
+                                <textarea id="demoTime" rows="2" placeholder="e.g., Weekdays after 4 PM / Sat Morning"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" id="whatsappBtn" class="btn btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="contact-info-section">
+                        <h3>Get in Touch Directly</h3>
+                        <div class="contact-details">
+                             <p><i class="fas fa-map-marker-alt fa-fw"></i> Pimpri-Chinchwad, Pune 411044, <br>Maharashtra, India</p>
+                             <p><i class="fas fa-phone fa-fw"></i> <a href="tel:+919284157202">+91 92841 57202</a></p>
+                             <p><i class="fas fa-globe fa-fw"></i> <a href="https://pro.psychometricaproplus.com/" target="_blank">pro.psychometricaproplus.com</a></p>
+                              </div>
+                        </div>
+                </div>
+            </section>
+
+            <section id="offer" class="pane animate-fade-in">
+                 <h2 class="pane-title">Exclusive Annual Subscription Offer</h2>
+                 <p class="pane-subtitle">Unlock Full Potential for Your Institution</p>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <i class="fas fa-gem"></i>
+                        <h3>Psychometrica ProPlus - Institutional</h3>
+                        <span>Annual Subscription</span>
+                    </div>
+                    <div class="pricing-body">
+                        <p>Get complete platform access for one year, including:</p>
+                         <ul class="styled-list compact">
+                            <li><i class="fas fa-check"></i>Unlimited Student Assessments</li>
+                            <li><i class="fas fa-check"></i>Unlimited Development Plans (Counseling Reports)</li>
+                            <li><i class="fas fa-check"></i>Unlimited Certificate Generation</li>
+                            <li><i class="fas fa-check"></i>Bilingual Support (English & Marathi)</li>
+                            <li><i class="fas fa-check"></i>Data Management & Export</li>
+                             <li><i class="fas fa-check"></i>Dedicated Support</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-tag">
+                        <span class="original-price">₹15,000</span>
+                        <span class="offer-price">₹7,500 <small>/ Year</small></span>
+                        <span class="discount-badge">Save 50%! Limited Time!</span>
+                         </div>
+                    <div class="pricing-footer">
+                         <a href="#contact" class="btn btn-accent">Claim Offer & Request Demo</a>
+                    </div>
+                </div>
+                 <footer class="pane-footer">
+                     <p class="footer-note">Empower your counseling services and provide unparalleled student guidance.</p>
+                </footer>
+            </section>
+
         </main>
-      </section>
 
-      <!-- OUR APPROACH -->
-      <section id="design" class="pane">
-        <h2 class="page-title">Expertly Designed for Holistic Development</h2>
-        <p class="page-sub">The Science Behind Psychometrica ProPlus</p>
-        <div>
-          <h3>Grounded in Research</h3>
-          <p>Psychometrica ProPlus isn't just another test. It's built upon established principles of psychometrics and child development psychology. Our assessment framework is carefully curated by experts to provide reliable and meaningful insights into a student's cognitive abilities, personality facets, and evolving interests.</p>
-          <h3>Developed by Experts</h3>
-          <p>The assessments and development plan frameworks have been designed and validated by experienced professionals in educational psychology, psychometric testing, and child counseling. Their collective expertise ensures the tests are relevant, age-appropriate, and culturally attuned, particularly for the Indian educational context.</p>
-          <h3>Tailored for Different Developmental Stages</h3>
-          <p>We recognize that students' guidance needs change significantly as they grow. That's why Psychometrica ProPlus offers distinct, age-calibrated modules:</p>
-        </div>
-        <ul class="benefits-list block">
-          <li><strong>Grades 5-8 (Foundational Stage):</strong> Identify core foundational aptitudes (verbal, numerical, abstract reasoning) alongside basic personality indicators. Build essential skills for academic success.</li>
-          <li><strong>Grades 9-10 (Exploratory Stage):</strong> Using the RIASEC model (Realistic, Investigative, Artistic, Social, Enterprising, Conventional) we map specific interest areas to guide stream selection and career exploration.</li>
-        </ul>
-        <p class="page-sub">Actionable Outcomes for Growth</p>
-        <p>The detailed reports and automatically generated, bilingual development plans translate complex psychometric data into clear insights and concrete steps parents, teachers, and students can use to foster improvement, make informed decisions, and build confidence.</p>
-        <p class="note">(Assessments & Reports available in English & Marathi)</p>
-        <div class="footer">
-          <p><i class="fas fa-globe"></i> <a href="https://pro.psychometricaproplus.com/" target="_blank">pro.psychometricaproplus.com</a></p>
-          <p><i class="fas fa-phone"></i> <a href="tel:+919284157202">+91 92841 57202</a></p>
-          <button class="btn-cta" onclick="location.hash='#contact'">Request a Demo</button>
-        </div>
-      </section>
+        <footer class="global-footer">
+             <p>&copy; <span id="currentYear">2025</span> Psychometrica ProPlus. All Rights Reserved.</p> <p>
+                <a href="https://pro.psychometricaproplus.com/" target="_blank">Platform Login</a> |
+                <a href="tel:+919284157202">Contact Us</a>
+                </p>
+        </footer>
 
-      <!-- CONTACT & DEMO -->
-      <section id="contact" class="pane">
-        <h2 class="page-title">Contact Us &amp; Request a Demo</h2>
-        <p class="page-sub">Let's connect and explore how Psychometrica ProPlus can benefit you.</p>
-        <div class="contact-form block">
-          <h3>Book Your Free Demo</h3>
-          <p>Fill out the quick form below and hit the WhatsApp button to schedule your personalized demo!</p>
-          <div class="form-group">
-            <label for="demoName">Your Name:</label>
-            <input type="text" id="demoName" placeholder="Full name">
-          </div>
-          <div class="form-group">
-            <label for="demoPhone">Phone Number:</label>
-            <input type="tel" id="demoPhone" placeholder="10-digit phone" pattern="[0-9]{10}">
-          </div>
-          <div class="form-group">
-            <label for="demoTime">Preferred Day / Time:</label>
-            <textarea id="demoTime" rows="2" placeholder="e.g., Weekdays after 4 PM"></textarea>
-          </div>
-          <div style="text-align:center">
-            <button id="whatsappBtn" class="whatsapp-btn">
-              <i class="fab fa-whatsapp"></i> Book via WhatsApp
-            </button>
-          </div>
-        </div>
-        <div class="address block">
-          <h4>Our Location &amp; Contact</h4>
-          <p><i class="fas fa-map-marker-alt"></i> Pimpri-Chinchwad, Pune 411044, Maharashtra, India</p>
-          <p><i class="fas fa-phone"></i> <a href="tel:+919284157202">+91 92841 57202</a></p>
-          <p><i class="fas fa-globe"></i> <a href="https://pro.psychometricaproplus.com/" target="_blank">pro.psychometricaproplus.com</a></p>
-        </div>
-        <div class="footer">
-          <p><i class="fas fa-globe"></i> <a href="https://pro.psychometricaproplus.com/" target="_blank">pro.psychometricaproplus.com</a></p>
-          <p><i class="fas fa-phone"></i> <a href="tel:+919284157202">+91 92841 57202</a></p>
-        </div>
-      </section>
+    </div><script>
+        document.addEventListener('DOMContentLoaded', function() {
 
-      <!-- OFFER -->
-      <section id="offer" class="pane">
-        <h2 class="page-title">Special Offer for Institutions</h2>
-        <p class="page-sub">Psychometrica ProPlus Annual Subscription</p>
-        <div class="pricing block">
-          <h3>Unlock Unlimited Access</h3>
-          <p>Get complete access to Psychometrica ProPlus for one year, including:</p>
-          <ul>
-            <li>Unlimited student assessments</li>
-            <li>Unlimited development plans (Counseling Reports)</li>
-            <li>Unlimited certificate generation</li>
-            <li>Full access for 1 year, no restrictions</li>
-          </ul>
-          <p class="regular">Original Price: ₹15,000 / Year</p>
-          <p class="offer">₹7,500 / Year</p>
-          <p class="disc">(63% Discount!)</p>
-          <p><em>Limited Time Offer!</em></p>
-        </div>
-        <div class="footer">
-          <button class="btn-cta" onclick="location.hash='#contact'">Contact Us Now!</button>
-        </div>
-      </section>
+            // --- Tab Navigation ---
+            const tabLinks = document.querySelectorAll('.tab-link');
+            const panes = document.querySelectorAll('.pane');
+            const tabsNav = document.getElementById('tabs-nav'); // Reference to the nav wrapper
 
-    </div><!-- /.panes -->
-  </div><!-- /.brochure -->
+            function activateTab(targetHash) {
+                if (!targetHash || targetHash === '#') {
+                     // Default to the first tab if hash is missing or invalid
+                    targetHash = tabLinks.length > 0 ? tabLinks[0].getAttribute('href') : null;
+                    if (!targetHash) return; // No tabs found
+                }
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const tabs = document.querySelectorAll('.tabs a');
-      const panes = document.querySelectorAll('.pane');
-      function activate(hash) {
-        panes.forEach(p => p.classList.toggle('active', '#' + p.id === hash));
-        tabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === hash));
-      }
-      const defaultHash = tabs[0].getAttribute('href');
-      activate(location.hash || defaultHash);
+                let activated = false;
+                panes.forEach(pane => {
+                    if ('#' + pane.id === targetHash) {
+                        pane.classList.add('active');
+                        // Add fade-in class dynamically if needed, or rely on CSS for initial animation
+                         pane.classList.remove('animate-fade-in'); // Remove momentarily
+                         void pane.offsetWidth; // Trigger reflow
+                         pane.classList.add('animate-fade-in'); // Re-add to trigger animation
+                        activated = true;
+                    } else {
+                        pane.classList.remove('active');
+                    }
+                });
 
-      document.querySelector('.tabs').addEventListener('click', e => {
-        const a = e.target.closest('a');
-        if (!a) return;
-        e.preventDefault();
-        const h = a.getAttribute('href');
-        history.pushState(null, '', h);
-        activate(h);
-      });
-      window.addEventListener('popstate', () => activate(location.hash));
+                tabLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === targetHash);
+                });
 
-      document.getElementById('whatsappBtn').addEventListener('click', () => {
-        const name = document.getElementById('demoName').value.trim();
-        const phone = document.getElementById('demoPhone').value.trim();
-        const time = document.getElementById('demoTime').value.trim();
-        if (!name || !/^\d{10}$/.test(phone)) {
-          alert('Please enter your name and a valid 10-digit phone.');
-          return;
-        }
-        const msg = encodeURIComponent(
-          `Hi! I'd like to book a demo for Psychometrica ProPlus.\n\nName: ${name}\nPhone: ${phone}` +
-          (time ? `\nPreferred Time: ${time}` : '')
-        );
-        window.open(`https://wa.me/919284157202?text=${msg}`, '_blank');
-      });
-    });
-  </script>
+                // Scroll to the top of the content pane area after tab switch, if tab nav is sticky
+                // Optional: Add slight offset if needed
+                if (activated && tabsNav && window.getComputedStyle(tabsNav).position === 'sticky') {
+                    // Calculate offset based on tab nav height
+                    const offset = tabsNav.offsetHeight + 10; // Add a small buffer
+                    const targetElement = document.querySelector(targetHash);
+                    if (targetElement) {
+                         const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                         window.scrollTo({
+                            top: elementPosition - offset,
+                            behavior: 'smooth'
+                         });
+                    }
+                } else if (activated) {
+                    // If nav isn't sticky, maybe just scroll the target pane into view smoothly
+                    const targetElement = document.querySelector(targetHash);
+                     if(targetElement) {
+                        // targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                     }
+                }
+            }
+
+            // Initial activation based on URL hash or default
+            activateTab(location.hash || (tabLinks.length > 0 ? tabLinks[0].getAttribute('href') : '#'));
+
+
+            // Handle clicks on tab links
+            document.querySelector('.tabs-container').addEventListener('click', e => {
+                const link = e.target.closest('a.tab-link');
+                if (!link) return;
+
+                e.preventDefault();
+                const hash = link.getAttribute('href');
+
+                if (location.hash !== hash) { // Only update history if hash changes
+                     // Update URL hash without page jump
+                     history.pushState(null, '', hash);
+                } else {
+                    // If clicking the already active tab, maybe re-trigger scroll/animation
+                }
+                activateTab(hash);
+
+                // Ensure the clicked tab is visible in the scrollable container
+                link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            });
+
+            // Handle browser back/forward navigation
+            window.addEventListener('popstate', () => {
+                activateTab(location.hash);
+            });
+
+            // Handle clicks on internal links (like buttons pointing to #contact)
+             document.body.addEventListener('click', e => {
+                const internalLink = e.target.closest('a[href^="#"]');
+                if (internalLink && internalLink.getAttribute('href').length > 1) { // Check if it's not just '#'
+                    const targetId = internalLink.getAttribute('href');
+                     // Check if this link corresponds to a tab
+                     const isTabLink = Array.from(tabLinks).some(tab => tab.getAttribute('href') === targetId);
+
+                     if(isTabLink && !internalLink.classList.contains('tab-link')) {
+                        // If it's a link *to* a tab section, but *not* a tab link itself (e.g., button)
+                        e.preventDefault(); // Prevent default jump
+                        activateTab(targetId);
+                         if (location.hash !== targetId) {
+                            history.pushState(null, '', targetId);
+                        }
+                         // Scroll to the tab navigation bar or slightly above it
+                         const offset = (tabsNav ? tabsNav.offsetHeight : 0) + 10;
+                         // Use target element instead of nav for scroll position calculation
+                         const targetElement = document.querySelector(targetId);
+                         if (targetElement) {
+                            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                            window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
+                         } else {
+                             // Fallback scroll to top if target somehow not found
+                            window.scrollTo({ top: 0, behavior: 'smooth'});
+                         }
+
+                     } else if (!isTabLink) {
+                         // For other internal links (e.g., buttons linking to sections not directly tabs),
+                         // rely on CSS smooth scroll. Check if target exists.
+                          const targetElement = document.querySelector(targetId);
+                          if (!targetElement) {
+                            e.preventDefault(); // Prevent jump if target doesn't exist
+                            console.warn(`Target element ${targetId} not found.`);
+                          }
+                     }
+                     // If it *is* a tab link (isTabLink && internalLink.classList.contains('tab-link')),
+                     // the '.tabs-container' click listener already handles it.
+                }
+            });
+
+
+            // --- WhatsApp Button Logic ---
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            const demoForm = document.getElementById('demoForm');
+
+            if (whatsappBtn && demoForm) {
+                demoForm.addEventListener('submit', (e) => {
+                    e.preventDefault(); // Prevent actual form submission
+
+                    const nameInput = document.getElementById('demoName');
+                    const phoneInput = document.getElementById('demoPhone');
+                    const roleInput = document.getElementById('demoRole');
+                    const timeInput = document.getElementById('demoTime');
+
+                    // Simple Validation
+                    let isValid = true;
+                    if (!nameInput.value.trim()) {
+                         alert('Please enter your name.');
+                         nameInput.focus();
+                         isValid = false;
+                         return;
+                     }
+                     if (!/^\d{10}$/.test(phoneInput.value.trim())) {
+                         alert('Please enter a valid 10-digit phone number.');
+                         phoneInput.focus();
+                         isValid = false;
+                         return;
+                     }
+
+                    if (isValid) {
+                        const name = nameInput.value.trim();
+                        const phone = phoneInput.value.trim();
+                        const role = roleInput.value;
+                        const time = timeInput.value.trim();
+
+                        // Get current date/time for context - Using IST
+                        const now = new Date();
+                        const options = { timeZone: 'Asia/Kolkata', weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true };
+                        const formattedDateTime = now.toLocaleString('en-IN', options);
+
+
+                        let message = `Hi! I'd like to book a demo for Psychometrica ProPlus.\n\n`;
+                        message += `Name: ${name}\n`;
+                        message += `Phone: ${phone}\n`;
+                        message += `I am a: ${role}\n`;
+                        if (time) {
+                            message += `Preferred Time: ${time}\n`;
+                        }
+                        message += `\n(Request sent on: ${formattedDateTime} IST)`;
+
+                        const whatsappURL = `https://wa.me/919284157202?text=${encodeURIComponent(message)}`;
+                        window.open(whatsappURL, '_blank');
+                    }
+                });
+            }
+
+             // --- Update Footer Year ---
+            const currentYearSpan = document.getElementById('currentYear');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // --- Intersection Observer for Animations (Optional - uncomment for scroll effects) ---
+            /*
+            const animatedElements = document.querySelectorAll('.feature-card, .content-block, .step-item'); // Select elements to animate on scroll
+
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        // Check if the element is not inside an initially hidden pane OR if its pane is active
+                        const parentPane = entry.target.closest('.pane');
+                        const isVisiblePane = parentPane ? parentPane.classList.contains('active') : true; // Assume visible if not in a pane
+
+                        if (entry.isIntersecting && isVisiblePane) {
+                            entry.target.classList.add('visible');
+                           // observer.unobserve(entry.target); // Uncomment to animate only once
+                        } else if (!entry.isIntersecting) {
+                           // entry.target.classList.remove('visible'); // Uncomment to re-animate when scrolling back up
+                        }
+                    });
+                }, {
+                    threshold: 0.1 // Trigger when 10% of the element is visible
+                    // rootMargin: "0px 0px -50px 0px" // Optional: Adjust trigger point
+                });
+
+                animatedElements.forEach(el => observer.observe(el));
+
+                 // Re-evaluate visibility when tabs change
+                 document.querySelector('.tabs-container').addEventListener('click', () => {
+                    // Slight delay to allow pane to become active
+                    setTimeout(() => {
+                         animatedElements.forEach(el => {
+                             const parentPane = el.closest('.pane');
+                             const isVisiblePane = parentPane ? parentPane.classList.contains('active') : true;
+                             if (isVisiblePane) {
+                                // Check intersection status again for elements in the newly active pane
+                                // This might re-trigger the observer callback if elements are now intersecting
+                             } else {
+                                // Hide elements in non-active panes if re-animation is desired
+                                // el.classList.remove('visible');
+                             }
+                         });
+                     }, 50); // Adjust delay as needed
+                 });
+
+
+            } else {
+                // Fallback for older browsers: just make them visible (remove animation classes/styles if needed)
+                // animatedElements.forEach(el => el.classList.add('visible')); // Or remove animation styles entirely
+                 console.warn("IntersectionObserver not supported. Scroll animations disabled.");
+            }
+            // IMPORTANT: If using the IntersectionObserver, adjust the CSS:
+            // 1. Remove the `animation` property from `.animate-fade-in`.
+            // 2. Add transition styles to the base selector (e.g., `.feature-card`, `.content-block`).
+            // 3. Add the final state (opacity: 1, transform: translateY(0)) to a `.visible` class.
+            // Example CSS changes are commented out in the <style> section above.
+            */
+
+        });
+    </script>
+
 </body>
 </html>
